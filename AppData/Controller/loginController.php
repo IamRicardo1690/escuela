@@ -1,43 +1,36 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: Luis
- * Date: 12/06/2018
- * Time: 01:40 PM
- */
-namespace AppData\Controller;
-class loginController
+<?php namespace AppData\Controller;
+use AppData\Model\Login;
+class LoginController
 {
     private $login;
-    public function __construct()
-        {
-            $this->login= new \AppData\Model\Login();
-        }
-    public function index()
-        {
-            //session_destroy();
-        }
-    public function verify()
-        {
-            $_SESSION["error_login"]="";
-            if(isset($_POST)) {
-                $this->login->set("email", $_POST["email"]);
-                $this->login->set("pass", $_POST["password"]);
-                $datos = $this->login->verify();
-                if (mysqli_num_rows($datos) > 0) {
-                    $datos=mysqli_fetch_assoc($datos);
-                    $_SESSION["username"]=$datos["email"];
-                    header("Location:" . URL . "Empleado_bienvenido");
-                }
-                else {
-                    $_SESSION["error_login"] = "los datos no coinciden con nuestros registros";
-                    header("Location:" . URL . "login");
-                }
-            }
-        }
-    public function logout()
-        {
-            session_destroy();
-           // header("Location:".URL);
-        }
+
+    function __construct(){
+      $this->login=new Login();
+
+    }
+    function index() {
+
+    }
+    function __destruct() {
+
+    }
+    public function verify(){
+   	if(isset($_POST)){
+    		$this->login->set("usuario",$_POST["usuario"]);
+			$this->login->set("contraseña",$_POST["contraseña"]);
+			$datos=$this->login->verify();
+			if(mysqli_num_rows($datos)>0){
+				$datos=mysqli_fetch_assoc($datos);
+				$_SESSION["nombre"]=$datos["nombre"]." ".$datos["apellido_paterno"]." ".$datos["apellido_materno"];
+			}else{
+					$_SESSION["error_login"]="los datos no coinciden cn nuestros registros";
+				}?>
+				<script type="text/javascript">
+				window.location.href="<?php echo URL ?>";
+				</script>
+				<?php
+		}
+    }
+
 }
+?>

@@ -1,8 +1,7 @@
-<?php
-namespace AppData\Model;
+<?php namespace AppData\Model;
 class conexion
 {
-    private $datos=array("server"=>"localhost","user"=>"root","password"=>"", "base"=>"hotel");
+    private $datos=array("server"=>"localhost","user"=>"root","password"=>"", "base"=>"escuela");
     private $conexion;
     function __construct()
     {
@@ -12,6 +11,7 @@ class conexion
     public function QuerySimple($sql)
     {
         $this->conexion->query($sql) or die (mysqli_error($this->conexion));
+        return $datos;
     }
     public function QueryResultado($sql)
     {

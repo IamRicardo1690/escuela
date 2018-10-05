@@ -1,1 +1,0 @@
-<p>HOLA MUNDO DESDE VMC</P>

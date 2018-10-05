@@ -6,10 +6,11 @@ class Enrutador
     {
         $controlador = $request->getControlador() . "Controller";
         $ruta = ROOT . "AppData" . DS . "Controller" . DS . $controlador . ".php";
+        //echo "ruta";
         $metodo = $request->getMetodo();
         $argumento = $request->getArgumento();
         if (is_readable($ruta)) {
-            require_once($ruta);
+            //require_once($ruta);
             $mostrar = "AppData\\Controller\\" . $controlador;
             $controlador = new $mostrar;
             if (!isset($argumento)) {
@@ -23,7 +24,8 @@ class Enrutador
             if (is_readable($ruta))
                 require_once($ruta);
             else
-                if ($request->getMetodo() == "eliminar" || $request->getMetodo() == "actualizar" || $request->getMetodo() == "crear") {
+                if ($request->getMetodo() == "eliminar" || $request->getMetodo() == "actualizar" || $request->getMetodo() == "crear") 
+                {
                     $ruta = ROOT . "Views" . DS . $request->getControlador() . DS . "tabla" . ".php";
                     if (is_readable($ruta))
                         require_once($ruta);
