@@ -18,12 +18,9 @@
           <div class="form-group">
             <div class="row">
               <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                <a href="#" tabindex="6" class="form-control btn btn-primary">Register</a>
 
-          <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
 
-          </div>
-          <button type="submit" name="login-submit" tabindex="4" class="form-control btn btn-success" id="entrar">Submit</button>
+       <button type="submit" name="login-submit" tabindex="6" class="form-control btn btn-success center" id="entrar">Submit</button>
 
           </div>
           </div>
