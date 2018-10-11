@@ -20,7 +20,7 @@
               <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
 
 
-       <button type="submit" name="login-submit" tabindex="6" class="form-control btn btn-success center" id="entrar">Submit</button>
+       <button type="submit" name="login-submit" tabindex="6" class="form-control btn btn-success" id="entrar">Submit</button>
 
           </div>
           </div>
