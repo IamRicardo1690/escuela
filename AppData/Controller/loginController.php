@@ -47,11 +47,12 @@ class LoginController
         $this->login->set("password",$_POST['password']);
         $this->login->guardar();
 
-        /*?>
+        ?>
         <script type="text/javascript">
         window.location.href = "<?php echo URL ?>Login";
+        //alert("entro")
         </script>
-        <?php>*/
+        <?php
 
       }
     }

@@ -16,7 +16,7 @@ class conexion
     public function QueryResultado($sql)
     {
         $datos=$this->conexion->query($sql) or die (mysqli_error($this->conexion));
-        //return $datos;
+        return $datos;
     }
     public function __destruct()
     {
