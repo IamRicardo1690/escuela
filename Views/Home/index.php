@@ -5,8 +5,8 @@
   Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 </p>
 
-
-<script type="text/javascript">
+<!--mensaje de alerta -->
+<!--<script type="text/javascript">
 $(document).ready(function(){
   swal({
     title: "Good job!",
@@ -15,4 +15,25 @@ $(document).ready(function(){
     button: "Aww yiss!",
   });
 })
+</script>-->
+
+<!--alerta de no has iniciado sesion -->
+<script type="text/javascript">
+$(document).ready(function(){
+  swal({
+    title: "Aun no has iniciado sesion",
+    text: "Ingrese ahora",
+    type: "warning",
+    closeOnConfirm: false,
+    closeOnCancel: true,
+    showCancelButton: true,
+    confirmButtonClass: "btn-danger",
+  },
+  function(isConfirm){
+    if(isConfirm)
+    window.location.href = "<?php echo URL ?>login";
+  }
+);
+})
+
 </script>
