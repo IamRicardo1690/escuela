@@ -56,6 +56,17 @@
       $this->conexion->QuerySimple($sql);
       }
     }
+    public function getSex(){
+      $sql="SELECT * FROM sexo";
+      $datos=$this->conexion->QueryResultado($sql);
+      return $datos;
+    }
+
+    public function getUser(){
+      $sql="SELECT * FROM tipo_usuario";
+      $datos=$this->conexion->QueryResultado($sql);
+      return $datos;
+    }
 
   }
   ?>

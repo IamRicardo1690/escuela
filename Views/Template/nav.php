@@ -53,9 +53,11 @@
     </form>
 
     <form class="form-inline my-2 my-lg-0" style="margin-left:1em;">
-      <a class="btn btn-outline-primary" href="<?php echo URL; ?>Registro">Registro</a>
+      <a class="btn btn-outline-primary" href="<?php echo URL; ?>Login/Registrar">Registro</a>
 
       </form>
   </div>
 
 </nav>
+
+<script type="text/javascript" src="<?php echo URL ?>Public/js/sweetalert.css"></script>

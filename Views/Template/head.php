@@ -17,5 +17,5 @@
   <script type="text/javascript" src="<?php echo URL ?>Public/js/jquery.js"></script>
   <script type="text/javascript" src="<?php echo URL ?>Public/js/bootstrap.min.js"></script>
   <script type="text/javascript" src="<?php echo URL ?>Public/js/jquery.validate.min.js"></script>
-
+  <script type="text/javascript" src="<?php echo URL ?>Public/js/sweetalert.min.js"></script>
 </head>

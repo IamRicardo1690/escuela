@@ -1,22 +1,3 @@
-
-
-
-  <!--<input type="text" name="nombre" value="">
-  <input type="text" name="ap_p" value="">
-  <input type="text" name="ap_m" value="">
-  <input type="text" name="edad" value="">
-  <select class="" name="sexo">
-    <option value="">Selecciona</option>
-    <option value="1">Femenino</option>
-    <option value="2">Masculino</option>
-  </select>
-  <select class="" name="tipo_usuario">
-    <option value="">Selecciona</option>
-    <option value="1">Alumno</option>
-    <option value="2">Docentes</option>
-    <option value="3">Jefe</option>
-  </select>-->
-
 <form id="form-reg" class="" action="<?php echo URL ?>login/guardar" method="post">
 <div class="container">
         <div class="row center-form justify-content-center">
@@ -62,7 +43,7 @@
                     <option value="">Selecciona</option>
                       <?php
                       if (isset($datos)){
-                        while ($fila = mysqli_fetch_assoc($datos)) { ?>
+                        while ($fila = mysqli_fetch_assoc($datos[0])) { ?>
                           <option value="<?php echo $fila['id_sexo']?>"> <?php echo $fila["descripcion"] ?> </option>
                       <?php  }
                       } ?>
@@ -74,17 +55,22 @@
   <div class="col-xs-6 col-sm-6 col-md-4">
                 <div class="form-group">
                   <p> <h6>Usuario</h6></p>
-                  <select class="form-control input-sm" name="id_tipo_usuario">
-                    <option value="">Tipo de usuario</option>
-                    <option value="1">Alumno</option>
-                    <option value="2">Docentes</option>
-                    <option value="3">Jefe</option>
-                  </select>
+                  <label for="id_tipo_usuario"></label>
+                  <select class="form-control" name="id_tipo_usuario">
+                    <option value="">Selecciona</option>
+                      <?php
+                      if (isset($datos)){
+                        while ($fila = mysqli_fetch_assoc($datos[1])) { ?>
+                          <option value="<?php echo $fila['id_tipo_usuario']?>"> <?php echo $fila["descripcion"] ?> </option>
+                      <?php  }
+                      } ?>
 
                 </div>
               </div>
 
-			    				<div class="col-xs-6 col-sm-6 col-md-6">
+              <br>
+
+			    				<div class="col-xs-6 col-sm-6 col-md-4">
 			    					<div class="form-group">
                       <p><h6>Nombre de usuario</h6></p>
 			    						<input type="nickname" name="nickname" id="nickname" class="form-control input-sm" placeholder="Nickname">

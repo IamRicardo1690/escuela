@@ -31,7 +31,13 @@ class LoginController
     public function logout(){
 			session_destroy();
 		}
-    public function registar(){
+    public function registrar(){
+      $datos[0]=$this->login->getSex();
+
+      $datos[1]=$this->login->getUser();
+      return $datos;
+
+      //var_dump($datos);
 
     }
     public function guardar(){
