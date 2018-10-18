@@ -6,5 +6,5 @@
 </div>
  </footer>
 
- <script type="text/javascript" src="<?php echo URL ?>Public/js/bootstrap.min.js"></script>
-<link rel="stylesheet" href="<?php echo URL ?>Public/css/sweetalert.css">
+ <script  src="<?php echo URL ?>Public/js/bootstrap.min.js"></script>
+ <script  src="<?php echo URL ?>Public/js/sweetalert.min.js" type="text/javascript"></script>

@@ -38,7 +38,7 @@
   <div class="col-xs-6 col-sm-6 col-md-4">
 			    			<div class="form-group">
                   <p> <h6>Sexo</h6></p>
-                  <label for="id_sexo"></label>
+
                   <select class="form-control" name="id_sexo">
                     <option value="">Selecciona</option>
                       <?php
@@ -55,7 +55,7 @@
   <div class="col-xs-6 col-sm-6 col-md-4">
                 <div class="form-group">
                   <p> <h6>Usuario</h6></p>
-                  <label for="id_tipo_usuario"></label>
+
                   <select class="form-control" name="id_tipo_usuario">
                     <option value="">Selecciona</option>
                       <?php
@@ -63,19 +63,20 @@
                         while ($fila = mysqli_fetch_assoc($datos[1])) { ?>
                           <option value="<?php echo $fila['id_tipo_usuario']?>"> <?php echo $fila["descripcion"] ?> </option>
                       <?php  }
-                      } ?>
-
+                    } ?>
+                    </select>
                 </div>
               </div>
 
-              <br>
 
-			    				<div class="col-xs-6 col-sm-6 col-md-4">
+
+			    				<div class="col-xs-6 col-sm-6 col-md-6">
 			    					<div class="form-group">
                       <p><h6>Nombre de usuario</h6></p>
 			    						<input type="nickname" name="nickname" id="nickname" class="form-control input-sm" placeholder="Nickname">
 			    					</div>
 			    				</div>
+
 			    				<div class="col-xs-6 col-sm-6 col-md-6">
 			    					<div class="form-group">
                       <p> <h6>Contraseña</h6></p>
@@ -85,7 +86,7 @@
 
                 <div class="center-form col-xs-4 col-sm-4 col-md-4">
 
-			    			      <input type="submit" value="guardar" class="btn btn-info btn-block" id="registar">
+			    			    <center> <input type="submit" value="guardar" class="btn btn-info btn-block" id="registar"> </center>
 
                 </div>
 

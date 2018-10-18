@@ -7,10 +7,12 @@
 
 
 <script type="text/javascript">
-$(document.ready(function(){
+$(document).ready(function(){
   swal({
-    title:"A un no has iniciado sesion",
+    title: "Good job!",
+    text: "You clicked the button!",
+    icon: "success",
+    button: "Aww yiss!",
   });
-}))
-
+})
 </script>
