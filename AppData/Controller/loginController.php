@@ -12,7 +12,7 @@ class LoginController
 
     }
     public function verify(){
-   	if(isset($_POST)){
+   	/*if(isset($_POST)){
     	$this->login->set("usuario",$_POST["usuario"]);
 			$this->login->set("contraseña",$_POST["contraseña"]);
 			$datos=$this->login->verify();
@@ -26,7 +26,68 @@ class LoginController
 				window.location.href="<?php echo URL ?>";
 				</script>
 				<?php
-		}
+		}*/
+    if(isset($_POST))
+    		{
+        		$this->login->set("usuario",$_POST["usuario"]);
+    			$this->login->set("contraseña",$_POST["contraseña"]);
+
+    			$datos=$this->login->verify();
+
+    			if(mysqli_num_rows($datos)>0)
+    			{
+    				$datos=mysqli_fetch_assoc($datos);
+    				if ($datos['id_tipo_usuario']== 1)
+    					{
+    						$_SESSION["id_usuario"]=$datos["id_usuario"];
+    						$_SESSION["nombre"]=$datos["nombre"]." ".$datos["ap_p"]." ".$datos["ap_m"];
+    						$_SESSION["id_tipo_usuario"]=$datos["id_tipo_usuario"];
+    						?>
+    						<script type="text/javascript">
+    							window.location="<?php echo URL.'Home'?>";
+    						</script>
+    						<?php
+    					}
+    					else if ($datos['id_tipo_usuario']== 2)
+    					{
+    						$_SESSION["id_usuario"]=$datos["id_usuario"];
+    						$_SESSION["nombre"]=$datos["nombre"]." ".$datos["ap_p"]." ".$datos["ap_m"];
+    						$_SESSION["id_tipo_usuario"]=$datos["id_tipo_usuario"];
+
+    						?>
+    						<script type="text/javascript">
+    							window.location="<?php echo URL.'Home'?>";
+    						</script>
+    						<?php
+    					}
+    					else if ($datos['id_tipo_usuario']== 3)
+    					{
+    						$_SESSION["id_usuario"]=$datos["id_usuario"];
+    						$_SESSION["nombre"]=$datos["nombre"]." ".$datos["ap_p"]." ".$datos["ap_m"];
+    						$_SESSION["id_tipo_usuario"]=$datos["id_tipo_usuario"];
+
+    						?>
+    						<script type="text/javascript">
+    							window.location="<?php echo URL.'Home'?>";
+    						</script>
+    						<?php
+    					}
+    			}
+    			else
+    				{
+    					?>
+    						<script type="text/javascript">
+    							alert("usuario no registrado");window.location.href="<?php echo URL.'Login' ?>";
+    						</script>
+    					<?php
+    				}
+
+    		}
+
+
+
+
+
     }
     public function logout(){
 			session_destroy();

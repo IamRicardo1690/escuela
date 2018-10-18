@@ -14,7 +14,6 @@
             <input type="password" class="form-control"  placeholder="Password" id="contraseña" name="contraseña">
           </div>
 
-
           <div class="form-group">
             <div class="row">
               <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
