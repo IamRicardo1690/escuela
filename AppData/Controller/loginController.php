@@ -84,17 +84,17 @@ class LoginController
 
     		}
 
-
-
-
-
     }
     public function logout(){
 			session_destroy();
+      ?>
+      <script type="text/javascript">
+      window.location.href="<?php echo URL ?>";
+      </script>
+      <?php
 		}
     public function registrar(){
       $datos[0]=$this->login->getSex();
-
       $datos[1]=$this->login->getUser();
       return $datos;
 
@@ -116,8 +116,25 @@ class LoginController
 
         ?>
         <script type="text/javascript">
-        window.location.href = "<?php echo URL ?>Login";
+        //window.location.href = "<?php echo URL ?>Login";
         //alert("entro")
+        $(document).ready(function(){
+          swal({
+            title: "Usuario registrado",
+            text: "Ingrese ahora",
+            type: "warning",
+            closeOnConfirm: false,
+            closeOnCancel: true,
+            showCancelButton: true,
+            confirmButtonClass: "btn-danger",
+          },
+          function(isConfirm){
+            if(isConfirm)
+            window.location.href = "<?php echo URL ?>login";
+          }
+        );
+        })
+
         </script>
         <?php
 

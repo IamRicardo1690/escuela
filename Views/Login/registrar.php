@@ -86,7 +86,7 @@
 
                 <div class="center-form col-xs-4 col-sm-4 col-md-4">
 
-			    			    <center> <input type="submit" value="guardar" class="btn btn-info btn-block" id="registar"> </center>
+			    			    <center> <input type="submit" value="Registrar" class="btn btn-info btn-block" id="registar"> </center>
 
                 </div>
 

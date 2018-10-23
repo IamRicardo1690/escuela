@@ -28,7 +28,6 @@ session_start();
       <a class="dropdown-item" href="#">Acentar</a>
       <a class="dropdown-item" href="#">Modificar</a>
     </li>
-      <a class="btn btn-outline-danger" style="position: relative; left: 455%;" href="<?php echo URL; ?>Login/logout">Salir</a>
       <?php
       }
       else
@@ -43,7 +42,6 @@ echo $_SESSION['nombre'];
       <div class="dropdown-menu" aria-labelledby="dropdown02">
       <a class="dropdown-item" href="#">Asignar</a>
       </li>
-      <a class="btn btn-outline-danger" style="position: relative; left: 455%;" href="<?php echo URL; ?>Login/logout">Salir</a>
       <?php
       }
       else
@@ -59,11 +57,13 @@ echo $_SESSION['nombre'];
       <a class="dropdown-item" href="#">Grupo</a>
       <a class="dropdown-item" href="#">Aprobacion</a>
 
+
+
     <?php }
       }
       ?>
       </li>
-      <a class="btn btn-outline-danger" style="position: relative; left: 455%;" href="<?php echo URL; ?>Login/logout">Salir</a>
+
    </ul>
 
 
@@ -72,22 +72,32 @@ echo $_SESSION['nombre'];
       <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
     </form>
+<!--de aqui para arriba tienes un desmadre-->
 
-
-
-  <form class="form-inline my-2 my-lg-0" style="margin-left:1em;">
-    <a class="btn btn-outline-primary" href="<?php echo URL; ?>Login">Login</a>
-
+<!--adentro de este pones otras condiciones iguales para validar que tipo menu quieres para el usuario-->
+<?php if (isset($_SESSION['id_tipo_usuario']))
+{
+?>
+    <form class="form-inline my-2 my-lg-0" style="margin-left:1em;">
+      <a class="btn btn-outline-danger" href="<?php echo URL; ?>Login/logout">Salir</a>
     </form>
-
-  </div>
-
+<?php
+}
+else
+//esta parte es el nav para los que no esten logueados
+{
+?>
+    <form class="form-inline my-2 my-lg-0" style="margin-left:1em;">
+        <a class="btn btn-outline-primary" href="<?php echo URL; ?>Login">Login</a>
+    </form>
     <form class="form-inline my-2 my-lg-0" style="margin-left:1em;">
       <a class="btn btn-outline-primary" href="<?php echo URL; ?>Login/Registrar">Registro</a>
+    </form>
 
-      </form>
+<?php
+}
+?>
 
-  </div>
 </div>
 </div>
 </nav>
