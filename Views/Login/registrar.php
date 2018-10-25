@@ -1,7 +1,7 @@
 <form id="form-reg" class="" action="<?php echo URL ?>login/guardar" method="post">
 <div class="container">
         <div class="row center-form justify-content-center">
-        <div class=" center-form col-sm-8 " >
+        <div class=" center-form col-sm-8 border border-dark" >
         	<div class="panel panel-default">
         		<div class="panel-heading">
 			    	<center>	<h3 class="panel-title">Bienvenido Por Favor Registrese</h3> </center>

@@ -29,7 +29,7 @@ class LoginController
 		}*/
     if(isset($_POST))
     		{
-        		$this->login->set("usuario",$_POST["usuario"]);
+        	$this->login->set("usuario",$_POST["usuario"]);
     			$this->login->set("contraseña",$_POST["contraseña"]);
 
     			$datos=$this->login->verify();
@@ -77,7 +77,24 @@ class LoginController
     				{
     					?>
     						<script type="text/javascript">
-    							alert("usuario no registrado");window.location.href="<?php echo URL.'Login' ?>";
+
+                $(document).ready(function(){
+                  swal({
+                    title: "Usuario no registrado",
+                    text: "Intende de nuevo",
+                    type: "warning",
+                    closeOnConfirm: false,
+                    closeOnCancel: true,
+                    showCancelButton: true,
+                    confirmButtonClass: "btn-danger",
+                  },
+                  function(isConfirm){
+                    if(isConfirm)
+                    window.location.href = "<?php echo URL ?>login";
+                  }
+                );
+                })
+    							//alert("usuario no registrado");window.location.href="<?php echo URL.'Login' ?>";
     						</script>
     					<?php
     				}

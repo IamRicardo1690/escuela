@@ -1,6 +1,8 @@
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-sm-4">
+
+
+<div class="container ">
+    <div class="row justify-content-center ">
+        <div class="col-sm-4 border border-dark">
             <h4 class="row justify-content-center">Inicia Sesion </h4><span class="glyphicon glyphicon-pencil"></span>
           <form class="form-signin" data-toggle="validate" method="post" action="<?php echo URL ?>login/verify" id="form-login">
 
