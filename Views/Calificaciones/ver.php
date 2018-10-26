@@ -14,8 +14,11 @@
       <th scope="col">Unidad 1</th>
       <th scope="col">Unidad 2</th>
       <th scope="col">Unidad 3</th>
-      <th scope="col">Unidad 4 </th>
-      <th scope="col">Promedio </th>
+      <th scope="col">Unidad 4</th>
+      <th scope="col">Promedio</th>
+      <th scope="col">Acciones</th>
+
+
     </tr>
   </thead>
 
@@ -26,11 +29,13 @@
     while ($fila=mysqli_fetch_assoc($datos)) { ?>
       <tr>
         <th scope="col"> <?php echo $fila['ap_p']." ".$fila['ap_m']." ".$fila['nombre'] ?> </th>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>@mdo</td>
-        <td>@mdo</td>
-      </tr>
+        <td scope="col"> Mark</td>
+        <td scope="col"> Otto</td>
+        <td scope="col"> @mdo</td>
+        <td scope="col"> @mdo</td>
+        <td scope="col"> @mdo</td>
+        <th scope="col"> <a class="btn btn-info btn-danger" href="<?php echo URL ?>Calificaciones/eliminar/<?php echo $fila['id_usuario'] ?>">Eliminar</a> </th>
+        </tr>
 
 <?php    }     ?>
 

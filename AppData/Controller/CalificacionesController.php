@@ -4,7 +4,7 @@ namespace AppData\Controller;
 use AppData\Model\Calificaciones;
 class CalificacionesController
 {
-    private $Calificaciones;
+    private $Calificaciones,$id_usuario,$conexion;
     function __construct(){
       $this->Calificaciones=new Calificaciones();
 
@@ -18,8 +18,26 @@ class CalificacionesController
       return $datos;
     }
     function eliminar($id) {
-    /*  $this->Calificaciones->set("id",$id);
-      $this->Calificaciones->delete();*/
+      $this->Calificaciones->set("id_usuario",$id[0]);
+      $this->Calificaciones->delete();
+      ?> 
+      <script type="text/javascript">
+    
+
+$(document).ready(function(){
+          swal({
+            title: "Eliminado",
+            text: "Correctamente",
+            timer: 2000,
+            });
+          setTimeout(function(){  
+            window.location.href="<?php echo URL ?>Calificaciones/ver";
+          },2100);
+       
+        })
+        
+      </script>
+      <?php
     }
     public function materias(){
       /*$datos=$this->Calificaciones->getMat();
