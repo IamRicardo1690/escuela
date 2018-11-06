@@ -4,9 +4,9 @@ namespace AppData\Controller;
 use AppData\Model\Calificaciones;
 class CalificacionesController
 {
-    private $Calificaciones,$id_usuario,$conexion;
+    private $calificaciones;
     function __construct(){
-      $this->Calificaciones=new Calificaciones();
+      $this->calificaciones=new Calificaciones();
 
     }
     function index() {
@@ -14,12 +14,12 @@ class CalificacionesController
     }
 
     function ver() {
-      $datos=$this->Calificaciones->getAlumns();
+      $datos=$this->calificaciones->getAlumns();
       return $datos;
     }
     function eliminar($id) {
-      $this->Calificaciones->set("id_usuario",$id[0]);
-      $this->Calificaciones->delete();
+      $this->calificaciones->set("id",$id);
+      $this->calificaciones->delete();
       ?> 
       <script type="text/javascript">
     
@@ -39,6 +39,32 @@ $(document).ready(function(){
       </script>
       <?php
     }
+
+  function get($id){
+      $this->calificaciones->set("id",$id);
+      $datos=$this->calificaciones->getOne();
+      if(mysqli_num_rows($datos)>0){
+        $datos=mysqli_fetch_assoc($datos);
+      }
+      echo json_encode($datos);
+    }
+    function edit(){
+      $data=$_POST['arreglo'];
+      $this->calificaciones->set("id",$data[0]['value']);
+      $this->calificaciones->set("nombre",$data[1]['value']);
+      $this->calificaciones->set("ap_p",$data[2]['value']);
+      $this->calificaciones->set("ap_m",$data[3]['value']);
+      $this->calificaciones->set("edad",$data[4]['value']);
+      $this->calificaciones->updatePer();
+      ?>
+      <script type="text/javascript">
+
+      </script>
+      <?php
+    }
+
+
+
     public function materias(){
       /*$datos=$this->Calificaciones->getMat();
       return $datos;*/

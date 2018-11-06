@@ -1,7 +1,7 @@
 <form id="form-reg" class="" action="<?php echo URL ?>login/guardar" method="post">
 <div class="container">
         <div class="row center-form justify-content-center">
-        <div class=" center-form col-sm-8 border border-dark" >
+        <div class="registrar center-form col-sm-8" >
         	<div class="panel panel-default">
         		<div class="panel-heading">
 			    	<center>	<h3 class="panel-title">Bienvenido Por Favor Registrese</h3> </center>
@@ -50,7 +50,7 @@
 
                   </select>
 
-			    			</div>
+			    </div>
   </div>
   <div class="col-xs-6 col-sm-6 col-md-4">
                 <div class="form-group">
@@ -86,7 +86,7 @@
 
                 <div class="center-form col-xs-4 col-sm-4 col-md-4">
 
-			    			    <center> <input type="submit" value="Registrar" class="btn btn-info btn-block" id="registar"> </center>
+			    			    <center> <input type="submit" value="Registrar" class="form-control btn btn-success" id="registar"> </center>
 
                 </div>
 

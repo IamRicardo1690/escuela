@@ -1,10 +1,11 @@
 
 
 <div class="container ">
-    <div class="row justify-content-center ">
-        <div class="col-sm-4 border border-dark">
-            <h4 class="row justify-content-center">Inicia Sesion </h4><span class="glyphicon glyphicon-pencil"></span>
+    <div class=" row justify-content-center ">
+        <div class="login col-sm-4">
+            <h4 class="row justify-content-center ">Inicia Sesion </h4><span class="glyphicon glyphicon-pencil"></span>
           <form class="form-signin" data-toggle="validate" method="post" action="<?php echo URL ?>login/verify" id="form-login">
+
 
           <div class="form-group ">
             <center> <label for="exampleInputEmail1">Usuario</label> </center>
@@ -15,6 +16,8 @@
             <center> <label for="exampleInputPassword1">Contraseña</label> </center>
             <input type="password" class="form-control"  placeholder="Password" id="contraseña" name="contraseña">
           </div>
+
+
 
           <div class="form-group">
             <div class="row">

@@ -95,7 +95,7 @@ else
         <a class="btn btn-outline-primary" href="<?php echo URL; ?>Login">Login</a>
     </form>
     <form class="form-inline my-2 my-lg-0" style="margin-left:1em;">
-      <a class="btn btn-outline-primary" href="<?php echo URL; ?>Login/Registrar">Registro</a>
+      <a class="btn btn-outline-primary" href="<?php echo URL; ?>Login/registrar">Registro</a>
     </form>
 
 <?php
