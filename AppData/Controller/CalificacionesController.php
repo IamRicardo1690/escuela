@@ -14,27 +14,37 @@ class CalificacionesController
     }
 
     function ver() {
+      /*$datos=$this->calificaciones->getMat();
+      return $datos;*/
+
       $datos=$this->calificaciones->getAlumns();
+  
+  //   $datos=$this->calificaciones->getMat();
       return $datos;
     }
+   /* public function vero() {
+      $datos=$this->calificaciones->getMat();
+      return $datos;
+      
+    }*/
     function eliminar($id) {
       $this->calificaciones->set("id",$id);
       $this->calificaciones->delete();
       ?> 
       <script type="text/javascript">
-    
-
 $(document).ready(function(){
+          
           swal({
-            title: "Eliminado",
-            text: "Correctamente",
-            timer: 2000,
-            });
-          setTimeout(function(){  
-            window.location.href="<?php echo URL ?>Calificaciones/ver";
+            title: "Success",
+            text: "Eliminado correctamente",
+            timer: 2000
+          });
+          setTimeout(function(){
+            window.location.href="<?php echo URL ?>Calificaciones/ver"
           },2100);
-       
+
         })
+
         
       </script>
       <?php
@@ -64,14 +74,6 @@ $(document).ready(function(){
     }
 
 
-
-    public function materias(){
-      /*$datos=$this->Calificaciones->getMat();
-      return $datos;*/
-
-      //var_dump($datos);
-
-    }
     function __destruct() {
 
     }

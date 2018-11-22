@@ -94,7 +94,7 @@ class LoginController
                   }
                 );
                 })
-    							//alert("usuario no registrado");window.location.href="<?php echo URL.'Login' ?>";
+    					//alert("usuario no registrado");window.location.href="<?php echo URL.'Login' ?>";
     						</script>
     					<?php
     				}
@@ -116,8 +116,8 @@ class LoginController
       return $datos;
 
       //var_dump($datos);
-
     }
+
     public function guardar(){
 
       if(isset($_POST)){
@@ -146,8 +146,11 @@ class LoginController
             confirmButtonClass: "btn-danger",
           },
           function(isConfirm){
-            if(isConfirm)
-            window.location.href = "<?php echo URL ?>login";
+            if(isConfirm){
+                window.location.href = "<?php echo URL ?>login";
+            }
+            else
+            window.location.href = "<?php echo URL ?>Home/index";
           }
         );
         })

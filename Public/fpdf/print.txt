@@ -1,0 +1,26 @@
+$pdf = new \AppData\Config\libs\fpdf\FPDF();
+$pdf->AddPage();
+$pdf->SetFont('Arial', 'B', 16);
+$pdf->Cell(190, 10, 'Lista de Domicilios', 0, 0, 'C');
+$pdf->Ln();
+$pdf->Ln();
+$pdf->SetX(15);
+$pdf->SetFont('Arial', 'B', 12);
+$pdf->SetTextColor(255, 255, 255);
+$pdf->SetFillColor(26, 122, 113);
+$pdf->Cell(30, 10, 'Municipio', 0, 0, 'C', 1);
+$pdf->Cell(30, 10, 'Calle', 0, 0, 'C', 1);
+$pdf->Ln();
+$pdf->SetTextColor(0, 0, 0);
+$pdf->SetFillColor(255, 255, 255);
+$pdf->SetFont('Arial', '', 10);
+while ($row=mysqli_fetch_row($datos))
+{
+    $pdf->SetX(15);
+
+    $pdf->Cell(30, 10, utf8_decode($row[1]), 1, 0, 'C', 1);
+    $pdf->Cell(30, 10, utf8_decode($row[2]), 1, 0, 'C', 1);
+
+    $pdf->Ln();
+}
+$pdf->Output();

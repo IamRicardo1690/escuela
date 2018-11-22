@@ -1,0 +1,20 @@
+a:hover { 
+    background-color: black;
+}
+.hola{
+  color: black;
+
+  font-size: 30px;
+  font-family: 14px normal normal uppercase helvetica, arial, serif;
+}
+.titulo 
+{ 
+ 	background-color: #394959;
+ 	border-radius: .3em; 
+ 	color: black;
+ 	font-size: 20px;
+ 	padding: .2em;
+ 	padding-left: 5em;
+
+ 	text-align: justify-all;
+}

@@ -5,6 +5,7 @@
     <meta name="author" content="">
 
 <title>Calificaciones</title>
+  <link rel="stylesheet" href="<?php echo URL ?>Public/css/nav.css">
   <link rel="stylesheet" href="<?php echo URL ?>Public/css/Registro.css">
   <link rel="stylesheet" href="<?php echo URL ?>Public/css/Login.css">
   <link rel="stylesheet" href="<?php echo URL ?>Public/css/validate.css">

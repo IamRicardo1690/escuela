@@ -1,12 +1,48 @@
 
-<div class="container ">
 
-  <?php
+
+<div class="container ">
+    <?php
   if(mysqli_num_rows($datos)>0) {
     ?>
+<div class="row">
+  <div class="expand-md col col-sm-10 m11">
+      <div class="col-xs-8 col-sm-8 col-md-8">
+            <span class="navbar-toggler-icon"></span>
+                <div class="form-group">
+                  <p class="hola" >MATERIAS</p>
+                  <div class="btn-group btn-group-toggle" data-toggle="buttons">
+    <label class="btn btn-secondary">
+       <input type="radio" name="options" id="option1" autocomplete="off" checked> APLICACCIONES WEB
+     </label>
+    <label class="btn btn-secondary">
+       <input type="radio" name="options" id="option2" autocomplete="off" checked href="<?php echo URL; ?>Calificaciones/ver">INTELIGENCIA ARTIFICIAL
+    </label>
+    <label class="btn btn-secondary">
+        <input type="radio" name="options" id="option3" autocomplete="off">TOPICOS SELECTOS
+    </label>
+    <label class="btn btn-secondary">
+        <input type="radio" name="options" id="option4" autocomplete="off">SISTEMAS PROGRAMABLES
+    </label>
+    <label class="btn btn-secondary">
+        <input type="radio" name="options" id="option5" autocomplete="off">CONMUTACION Y ENRUTAMIENTO
+    </label>
+                  </div>
+          </div>
+      </div>
+  </div>
+</div>
 
-<table class="table table-striped ">
-<h2> <p>APLICACIONES WEB</p> </h2>
+
+
+    
+  <div class="col col-sm-1 m11">
+    <button class="btn btn-outline-success pdf">Imprimir</button>
+  </div> 
+
+
+<table class="table table-striped table-hover">
+
   <thead class="shead dark thead-dark">
 
     <tr>
@@ -16,9 +52,41 @@
       <th scope="col">Unidad 3</th>
       <th scope="col">Unidad 4</th>
       <th scope="col">Promedio</th>
+
+  <?php
+
+
+
+    if(isset($_SESSION['id_usuario']))
+    {
+
+if (isset($_SESSION['id_tipo_usuario']) AND $_SESSION['id_tipo_usuario']== 2)
+{
+ $_SESSION['nombre'];
+?>
+
       <th scope="col">Eliminar</th>
       <th scope="col">Modificar</th>
 
+
+      <?php
+      }
+      else
+      if (isset($_SESSION['id_tipo_usuario']) AND $_SESSION['id_tipo_usuario']== 3)
+      {
+       $_SESSION['nombre'];
+      ?>
+
+      <th scope="col">Eliminar</th>
+      <th scope="col">Modificar</th>
+
+
+
+
+    <?php }
+      }
+      ?>
+     
 
     </tr>
   </thead>
@@ -30,15 +98,60 @@
     while ($fila=mysqli_fetch_assoc($datos)) { ?>
       <tr>
         <th scope="col"> <?php echo $fila['ap_p']." ".$fila['ap_m']." ".$fila['nombre'] ?> </th>
-        <td scope="col"> Mark</td>
-        <td scope="col"> Otto</td>
-        <td scope="col"> @mdo</td>
-        <td scope="col"> @mdo</td>
-        <td scope="col"> @mdo</td>
+        <td scope="col"></td>
+        <td scope="col"></td>
+        <td scope="col"></td>
+        <td scope="col"></td>
+        <td scope="col"></td>
+
+
+  <?php
+
+
+
+    if(isset($_SESSION['id_usuario']))
+    {
+
+if (isset($_SESSION['id_tipo_usuario']) AND $_SESSION['id_tipo_usuario']== 2)
+{
+ $_SESSION['nombre'];
+?>
+
         <th scope="col"> <a class="btn btn-outline-danger" href="<?php echo URL ?>Calificaciones/eliminar/<?php echo $fila['id_usuario'] ?>">Eliminar</a> </th>
       
         <th scope="col"> <button class="btn btn-outline-success editar" id="<?php echo $fila['id_usuario'] ?>">Modificar</button> </th>
-        </tr>
+      
+
+
+
+
+      <?php
+      }
+      else
+      if (isset($_SESSION['id_tipo_usuario']) AND $_SESSION['id_tipo_usuario']== 3)
+      {
+       $_SESSION['nombre'];
+      ?>
+
+  
+
+
+
+
+    <?php }
+      }
+      ?>
+
+
+
+</tr>
+
+
+
+
+
+
+<!--termina--> 
 
 <?php    }     ?>
 
@@ -49,38 +162,6 @@
   <h2>no se</h2>
 <?php } ?>
 </div>
-
-
-<div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"> 
-        <div class="modal-dialog"> 
-            <div class="modal-content">
-                <!-- Header--> 
-                <div class="modal-header"> 
-                    <button type="button" class="close" data-dismiss="modal"> 
-                        <span aria-hidden="true">&times;</span> 
-                        <span class="sr-only">Close</span> 
-                    </button> 
-                    <h4 class="modal-title" id="myModalLabel">
-                        Eliminar
-                    </h4> 
-                </div>
-                <!-- Body --> 
-                <div class="modal-body">
-                    Seguro que desea eliminar el registro???
-                </div>
-                <!-- Footer --> 
-                <div class="modal-footer"> 
-                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button> 
-                    <button type="button" class="btn btn-success" id="btn_delete">Confirmar</button> 
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-
-
-
 
 <div id="myModal" class="modal fade" role="dialog">
   <div class="modal-dialog ">
@@ -152,5 +233,26 @@
         window.location.href="<?php echo URL ?>Calificaciones/ver";
       })
     })
+    //eEXAMEN
+
+/*    $('tr').click(function(){
+      var datos=" ";
+      $(this).find('td').each(function(){
+        datos+=$(this).html()+" ";
+        })
+      alert(datos);
+      })*/
+
+
+
   })
+</script>
+
+<script type="text/javascript">
+  $(document).ready(function(){
+ $(".pdf").click(function(){
+        window.location.href="<?php echo URL ?>Reportes/imprimecalificaciones";
+      })
+  })
+       
 </script>
