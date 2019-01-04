@@ -43,6 +43,7 @@
     public function guardar(){
       $slq="INSERT INTO usuario (nickname, password, id_tipo_usuario) VALUES ('{$this->nickname}','{$this->password}','{$this->id_tipo_usuario}')";
       $this->conexion->QuerySimple($slq);
+      
       $sql="SELECT * FROM usuario WHERE nickname='{$this->nickname}' AND password='{$this->password}'";
       $dato=$this->conexion->QueryResultado($sql);
       //var_dump($dato);

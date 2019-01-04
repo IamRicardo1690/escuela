@@ -39,9 +39,11 @@ class LoginController
     				$datos=mysqli_fetch_assoc($datos);
     				if ($datos['id_tipo_usuario']== 1)
     					{
+                            
     						$_SESSION["id_usuario"]=$datos["id_usuario"];
     						$_SESSION["nombre"]=$datos["nombre"]." ".$datos["ap_p"]." ".$datos["ap_m"];
     						$_SESSION["id_tipo_usuario"]=$datos["id_tipo_usuario"];
+                            
     						?>
     						<script type="text/javascript">
     							window.location="<?php echo URL.'Home'?>";

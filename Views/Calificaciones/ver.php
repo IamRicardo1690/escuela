@@ -41,7 +41,7 @@
   </div> 
 
 
-<table class="table table-striped table-hover">
+<table class="table table-dark table-hover ">
 
   <thead class="shead dark thead-dark">
 
@@ -251,7 +251,7 @@ if (isset($_SESSION['id_tipo_usuario']) AND $_SESSION['id_tipo_usuario']== 2)
 <script type="text/javascript">
   $(document).ready(function(){
  $(".pdf").click(function(){
-        window.location.href="<?php echo URL ?>Reportes/imprimecalificaciones";
+        window.location.href="<?php echo URL ?>Reportescalifas/imprimecalificaciones";
       })
   })
        

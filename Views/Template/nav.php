@@ -7,35 +7,23 @@ session_start();
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-
   <div class="nave collapse navbar-collapse" id="navbarSupportedContent">
-
     <ul class="navbar-nav mr-auto">
 <!--practica empieza-->
-
 <!--practica empieza-->
-
       <?php
-
-
-
     if(isset($_SESSION['id_usuario']))
     {
         if (isset($_SESSION['id_tipo_usuario']) AND $_SESSION['id_tipo_usuario']== 1)
         {
-        echo $_SESSION['nombre'];
+        echo  $_SESSION['nombre'];
         ?>
-
-
-
       <li class="nav-item dropdown" style="margin-left:1em;">
         <a class="nav-link   " data-toggle="dropdown" href="#" id="dropdown01" role="button" aria-haspopup="true" aria-expanded="false">Calificaciones</a>
           <div class="dropdown-menu" aria-labelledby="dropdown01">
-            <a class="dropdown-item" href="<?php echo URL; ?>Calificaciones/Consultar">Consultar</a>
+            <a class="dropdown-item" href="<?php echo URL; ?>consultar/consultar">Consultar</a>
           </div>
-
       </li>
-
       <?php
       }
       else
@@ -43,12 +31,10 @@ if (isset($_SESSION['id_tipo_usuario']) AND $_SESSION['id_tipo_usuario']== 2)
 {
 echo $_SESSION['nombre'];
 ?>
-
-
       <li class="nav-item dropdown" style="margin-left:1em;">
         <a class="nav-link   " data-toggle="dropdown" href="#" id="dropdown01" role="button" aria-haspopup="true" aria-expanded="false">Calificaciones</a>
         <div class="dropdown-menu" aria-labelledby="dropdown01">
-            <a class="dropdown-item" href="<?php echo URL; ?>Calificaciones/Consultar">Consultar</a>
+            <a class="dropdown-item" href="<?php echo URL; ?>consultar/consultar">Consultar</a>
         </div>
       </li>
       <li class="nav-item dropdown" style="margin-left:1em;">
@@ -76,7 +62,6 @@ echo $_SESSION['nombre'];
       {
       echo $_SESSION['nombre'];
       ?>
-
       <li class="nav-item dropdown" style="margin-left:1em;">
         <a class="nav-link "  data-toggle="dropdown" href="#" id="dropdown03" role="button" aria-haspopup="true" aria-expanded="false">Reportes</a>
           <div class="dropdown-menu" aria-labelledby="dropdown03">
@@ -84,14 +69,11 @@ echo $_SESSION['nombre'];
             <a class="dropdown-item" href="#">Grupos</a>
             <a class="dropdown-item" href="#">Aprobacion</a>
           </div>
-
     <?php }
       }
       ?>
       </li>
-
    </ul>
-
     <form class="form-inline my-2 my-lg-0" style="margin-left:1em;">
       <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
@@ -100,9 +82,7 @@ echo $_SESSION['nombre'];
     <form class="form-inline my-2 my-lg-0" style="margin-left:1em;">
       <a class="btn btn-outline-primary" href="<?php echo URL; ?>Home/index">Home</a>
     </form>
-
 <!--de aqui para arriba tienes un desmadre-->
-
 <!--adentro de este pones otras condiciones iguales para validar que tipo menu quieres para el usuario-->
 <?php if (isset($_SESSION['id_tipo_usuario']))
 {
@@ -122,27 +102,18 @@ else
     <form class="form-inline my-2 my-lg-0" style="margin-left:1em;">
       <a class="btn btn-outline-primary" href="<?php echo URL; ?>Login/registrar">Registro</a>
     </form>
-
 <?php
 }
 ?>
-
 <script type="text/javascript">
      $('li').click(function() {
       $('li.active').each(function(){
        // $(this).removeClass('active');
-
       })
-
-      $(this).addClass('active');
-       
-      
+      $(this).addClass('active');  
   // common operation
- 
 })
-
 </script>
-
 </div>
 </div>
 </nav>

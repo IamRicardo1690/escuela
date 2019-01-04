@@ -1,34 +1,62 @@
-
 <div class="container">
-<h2> <p>MATERIAS</p> </h2>
-<table class="table .table-dark ">
-    <thead class="shead dark thead-dark">
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Larry</td>
-      <td>the Bird</td>
-      <td>@twitter</td>
-    </tr>
-  </tbody>
-</table>
-</div>
+      <?php
+  if(mysqli_num_rows($datos)>0) {
+    ?>
+  <div class="row">
+    <div class="col-">
+
+    </div>
+    <div class="col-md-4 offset-md-4">
+      <br><button type="button" class="btn btn-info pdf">Imprimir</button>
+    </div>
+  </div>
+ 
+  <table class="table table-striped">
+    <thead class="thead-dark">
+      <tr>
+        
+        <th scope="col">Alumno</th>
+        <th scope="col"></th>
+        <th scope="col"></th>
+         <!-- <th scope="col">Editar</th>
+        <th scope="col">Eliminar</th> -->
+        <th scope="col">Unidad I</th>
+        <th scope="col">Unidad II</th>
+        <th scope="col">Unidad III</th> 
+        <th scope="col">Unidad IV</th>
+        <th scope="col">Unidad V</th>
+        <th scope="col">Promedio</th>
+      </tr>
+    </thead>
+    <tbody>
+       <?php
+              while ($fila=mysqli_fetch_assoc($datos[0]))
+              {
+          ?>
+
+                  <tr>
+                      <td scope="col"><?php echo $fila['ap_p']." ".$fila['ap_m']." ".$fila['nombre'] ?></td>
+                      <td scope="col"></td>
+                      <td scope="col"></td>
+                      <td scope="col"><?php echo $fila['calificaciones'] ?></td>
+
+                      <td scope="col"></td>
+                      <td scope="col"></td>
+                      <td scope="col"></td>
+                      <td scope="col"></td>
+                      <td scope="col"></td>
+                  </tr>
+         <?php
+              }
+          ?>
+          
+    </tbody>
+  </table>
+<script type="text/javascript">
+  $(document).ready(function(){
+ $(".pdf").click(function(){
+        window.location.href="<?php echo URL ?>Reportematerias/imprimematerias";
+      })
+  })  
+
+</script>

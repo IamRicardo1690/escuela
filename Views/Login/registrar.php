@@ -139,7 +139,7 @@
 			id_sexo:
 			{
 				required:true,
-        int:true,
+                int:true,
 			},
 			id_tipo_usuario:
 			{

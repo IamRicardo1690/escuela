@@ -50,11 +50,6 @@
       $sql="UPDATE persona SET nombre='{$this->nombre}', ap_p='{$this->ap_p}', ap_m='{$this->ap_m}', edad='{$this->edad}' WHERE id_usuario='$this->id'";
       $this->conexion->QuerySimple($sql);
     }
-      public function getMat(){
-      $sql="SELECT * FROM materias";
-      $datos=$this->conexion->QueryResultado($sql);
-      return $datos;
-    }
 
 
 
