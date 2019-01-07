@@ -1,7 +1,7 @@
 <?php namespace AppData\Model;
 
   class Calificaciones{
-    private $id, $nombre, $ap_p, $ap_m; 
+    private $id, $nombre, $ap_p, $ap_m;
     //private $conexion
     public function __construct(){
       $this->conexion= new conexion();
@@ -57,5 +57,3 @@
 
   }
   ?>
-
-

@@ -18,24 +18,24 @@ class CalificacionesController
       return $datos;*/
 
       $datos=$this->calificaciones->getAlumns();
-  
+
   //   $datos=$this->calificaciones->getMat();
       return $datos;
     }
    /* public function vero() {
       $datos=$this->calificaciones->getMat();
       return $datos;
-      
+
     }*/
     function eliminar($id) {
       $this->calificaciones->set("id",$id);
       $this->calificaciones->delete();
-      ?> 
+      ?>
       <script type="text/javascript">
 $(document).ready(function(){
-          
+
           swal({
-            title: "Success",
+            title: "CORRECTO",
             text: "Eliminado correctamente",
             timer: 2000
           });
@@ -45,7 +45,7 @@ $(document).ready(function(){
 
         })
 
-        
+
       </script>
       <?php
     }

@@ -1,5 +1,5 @@
 
-
+<div class="container">
 
 <div class="container ">
     <?php
@@ -32,19 +32,11 @@
       </div>
   </div>
 </div>
-
-
-
-    
   <div class="col col-sm-1 m11">
     <button class="btn btn-outline-success pdf">Imprimir</button>
-  </div> 
-
-
+  </div>
 <table class="table table-dark table-hover ">
-
   <thead class="shead dark thead-dark">
-
     <tr>
       <th scope="col">Nombre del Alumno</th>
       <th scope="col">Unidad 1</th>
@@ -52,11 +44,7 @@
       <th scope="col">Unidad 3</th>
       <th scope="col">Unidad 4</th>
       <th scope="col">Promedio</th>
-
   <?php
-
-
-
     if(isset($_SESSION['id_usuario']))
     {
 
@@ -67,8 +55,6 @@ if (isset($_SESSION['id_tipo_usuario']) AND $_SESSION['id_tipo_usuario']== 2)
 
       <th scope="col">Eliminar</th>
       <th scope="col">Modificar</th>
-
-
       <?php
       }
       else
@@ -79,22 +65,13 @@ if (isset($_SESSION['id_tipo_usuario']) AND $_SESSION['id_tipo_usuario']== 2)
 
       <th scope="col">Eliminar</th>
       <th scope="col">Modificar</th>
-
-
-
-
     <?php }
       }
       ?>
-     
-
     </tr>
   </thead>
-
   <tbody>
-
     <?php
-
     while ($fila=mysqli_fetch_assoc($datos)) { ?>
       <tr>
         <th scope="col"> <?php echo $fila['ap_p']." ".$fila['ap_m']." ".$fila['nombre'] ?> </th>
@@ -103,12 +80,7 @@ if (isset($_SESSION['id_tipo_usuario']) AND $_SESSION['id_tipo_usuario']== 2)
         <td scope="col"></td>
         <td scope="col"></td>
         <td scope="col"></td>
-
-
   <?php
-
-
-
     if(isset($_SESSION['id_usuario']))
     {
 
@@ -118,13 +90,8 @@ if (isset($_SESSION['id_tipo_usuario']) AND $_SESSION['id_tipo_usuario']== 2)
 ?>
 
         <th scope="col"> <a class="btn btn-outline-danger" href="<?php echo URL ?>Calificaciones/eliminar/<?php echo $fila['id_usuario'] ?>">Eliminar</a> </th>
-      
+
         <th scope="col"> <button class="btn btn-outline-success editar" id="<?php echo $fila['id_usuario'] ?>">Modificar</button> </th>
-      
-
-
-
-
       <?php
       }
       else
@@ -132,36 +99,27 @@ if (isset($_SESSION['id_tipo_usuario']) AND $_SESSION['id_tipo_usuario']== 2)
       {
        $_SESSION['nombre'];
       ?>
-
-  
-
-
-
-
     <?php }
       }
       ?>
-
-
-
 </tr>
-
-
-
-
-
-
-<!--termina--> 
+<!--termina-->
 
 <?php    }     ?>
 
   </tbody>
 </table>
+
 <?php
 } else { ?>
   <h2>no se</h2>
 <?php } ?>
+
 </div>
+
+<br>
+<br>
+
 
 <div id="myModal" class="modal fade" role="dialog">
   <div class="modal-dialog ">
@@ -184,22 +142,19 @@ if (isset($_SESSION['id_tipo_usuario']) AND $_SESSION['id_tipo_usuario']== 2)
             <p for="ap_p">Apellido Paterno</p>
             <input type="text" class="form-control"
               id="ap_p" name="ap_p"></input>
-            
+
           </div>
           <div class="form-group col-xs-6 col-sm-6 col-md-4">
             <p for="ap_m">Apellido Materno</p>
             <input type="text" class="form-control"
               id="ap_m" name="ap_m"></input>
-              
+
           </div>
           <div class="form-group col-xs-6 col-sm-6 col-md-4">
             <p for="edad">Edad</p>
             <input type="text" class="form-control" id="edad" name="edad"></input>
-              
+
           </div>
-
-
-
         </form>
       </div>
       <div class="modal-footer">
@@ -242,9 +197,6 @@ if (isset($_SESSION['id_tipo_usuario']) AND $_SESSION['id_tipo_usuario']== 2)
         })
       alert(datos);
       })*/
-
-
-
   })
 </script>
 
@@ -254,5 +206,6 @@ if (isset($_SESSION['id_tipo_usuario']) AND $_SESSION['id_tipo_usuario']== 2)
         window.location.href="<?php echo URL ?>Reportescalifas/imprimecalificaciones";
       })
   })
-       
+
 </script>
+

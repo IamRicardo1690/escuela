@@ -1,3 +1,5 @@
+<br>
+<br>
 <form id="form-reg" class="" action="<?php echo URL ?>consultar/ver" method="post" i>
 <div class="container">
         <div class="row center-form justify-content-center">
@@ -103,3 +105,9 @@
 
   //obtener valores para llenar select de grupos
 </script>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>

@@ -1,6 +1,6 @@
 <div class="container">
       <?php
-  if(mysqli_num_rows($datos)>0) {
+  if(mysqli_num_rows($datos)) {
     ?>
   <div class="row">
     <div class="col-">

@@ -1,7 +1,9 @@
 
+<div class="container">
+
 
 <div class="container ">
-    <div class=" row justify-content-center ">
+    <div class=" row center-form justify-content-center ">
         <div class="login col-sm-4">
             <h4 class="row justify-content-center ">Inicia Sesion </h4><span class="glyphicon glyphicon-pencil"></span>
           <form class="form-signin" data-toggle="validate" method="post" action="<?php echo URL ?>login/verify" id="form-login">
@@ -36,7 +38,6 @@
     </div>
 
 </div>
-
 <script type="text/javascript">
 
 $("#entrar").click(function()
@@ -82,3 +83,7 @@ messages:
 });
 
 </script>
+
+<br>
+<br>
+<br>

@@ -38,12 +38,6 @@ echo $_SESSION['nombre'];
         </div>
       </li>
       <li class="nav-item dropdown" style="margin-left:1em;">
-        <a class="nav-link   " data-toggle="dropdown" href="#" id="dropdown01" role="button" aria-haspopup="true" aria-expanded="false">Registro</a>
-          <div class="dropdown-menu" aria-labelledby="dropdown01">
-            <a class="dropdown-item" href="<?php echo URL; ?>Materias/ver">Acentar</a>
-          </div>
-      </li>
-      <li class="nav-item dropdown" style="margin-left:1em;">
         <a class="nav-link   " data-toggle="dropdown" href="#" id="dropdown01" role="button" aria-haspopup="true" aria-expanded="false">Materias</a>
         <div class="dropdown-menu" aria-labelledby="dropdown01">
             <a class="dropdown-item" href="<?php echo URL; ?>Materias/ver">Ver</a>
